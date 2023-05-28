@@ -1,0 +1,2 @@
+# WxMiniGameFramework
+for WxMiniGame

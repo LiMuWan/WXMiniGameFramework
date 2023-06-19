@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2043534514
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ea893b17f4de3259b1a48d8f9dffae69
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/HotfixAssets/Sprites/UICommon/animal_slot.png
+- Assets/HotfixAssets/Sprites/UICommon/btn_menu.png
+Dependencies: []

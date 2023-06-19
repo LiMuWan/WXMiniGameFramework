@@ -19,6 +19,10 @@ public sealed partial class ItemConfig :  Bright.Config.BeanBase
         Type = _buf.ReadInt();
         Name = _buf.ReadString();
         Icon = _buf.ReadString();
+        Hp = _buf.ReadInt();
+        Spd = _buf.ReadInt();
+        Atk = _buf.ReadInt();
+        Def = _buf.ReadInt();
         PostInit();
     }
 
@@ -43,6 +47,22 @@ public sealed partial class ItemConfig :  Bright.Config.BeanBase
     /// 图标
     /// </summary>
     public string Icon { get; private set; }
+    /// <summary>
+    /// 血量修正
+    /// </summary>
+    public int Hp { get; private set; }
+    /// <summary>
+    /// 速度修正
+    /// </summary>
+    public int Spd { get; private set; }
+    /// <summary>
+    /// 攻击修正
+    /// </summary>
+    public int Atk { get; private set; }
+    /// <summary>
+    /// 防御修正
+    /// </summary>
+    public int Def { get; private set; }
 
     public const int __ID__ = -783814593;
     public override int GetTypeId() => __ID__;
@@ -63,6 +83,10 @@ public sealed partial class ItemConfig :  Bright.Config.BeanBase
         + "Type:" + Type + ","
         + "Name:" + Name + ","
         + "Icon:" + Icon + ","
+        + "Hp:" + Hp + ","
+        + "Spd:" + Spd + ","
+        + "Atk:" + Atk + ","
+        + "Def:" + Def + ","
         + "}";
     }
     

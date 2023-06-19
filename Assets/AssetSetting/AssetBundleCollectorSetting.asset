@@ -98,3 +98,29 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: Textures
+      GroupDesc: "UI\u8D34\u56FE"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotfixAssets/Textures
+        CollectorGUID: 83d5c1b37e7e625499d65974db2cd076
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: BattlePrefab
+      GroupDesc: "\u6218\u6597\u573A\u666F\u9884\u5236\u4F53"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotfixAssets/Battle/Prefabs/hud_tips.prefab
+        CollectorGUID: 100dd96bb46e8b346997f86e8a38d4a1
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

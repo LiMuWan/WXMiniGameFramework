@@ -7,7 +7,7 @@ namespace Hotfix.EventDefine
 {
     public class UserEventDefine : IEventMessage
     {
-          /// <summary>
+        /// <summary>
         /// 用户尝试再次初始化资源包
         /// </summary>
         public class UserLoginSuccess : IEventMessage
@@ -19,6 +19,18 @@ namespace Hotfix.EventDefine
             }
         }
         
+        /// <summary>
+        /// 用户开宝箱
+        /// </summary>
+        public class UserOpenTreasureBox:IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new UserOpenTreasureBox();
+                UniEvent.SendMessage(msg);
+            }
+        }
+
         /// <summary>
         /// 用户金币刷新
         /// </summary>
@@ -93,6 +105,45 @@ namespace Hotfix.EventDefine
             {
                  var msg = new UserExperienceRefresh();
                  msg.experience = experience;
+                 UniEvent.SendMessage(msg);
+            }
+        }
+        
+        /// <summary>
+        /// 用户装备刷新
+        /// </summary>
+        public class UserEquipRefresh:IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new UserEquipRefresh();
+                UniEvent.SendMessage(msg);
+            }
+        }
+
+        /// <summary>
+        /// 用户蛋数量刷新
+        /// </summary>
+        public class UserEggNumRefresh:IEventMessage
+        {
+            public int egg_num;
+
+            public static void SendEventMessage(int egg_num)
+            {
+                 var msg = new UserEggNumRefresh();
+                 msg.egg_num = egg_num;
+                 UniEvent.SendMessage(msg);
+            }
+        }
+
+        /// <summary>
+        /// 跳过战斗
+        /// </summary>
+        public class UserSkipBattle:IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                 var msg = new UserSkipBattle();
                  UniEvent.SendMessage(msg);
             }
         }

@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bg
+    uniqueID: 2131392147
+    locked: 0
+  - name: FirstRow
+    uniqueID: 4204771987
+    locked: 0
+  - name: SecondRow
+    uniqueID: 3173333333
+    locked: 0

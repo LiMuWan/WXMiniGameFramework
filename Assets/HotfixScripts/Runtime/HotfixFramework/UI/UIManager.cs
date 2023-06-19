@@ -22,6 +22,16 @@ public static class UIManager
             return s_EventSystem;
         }
     }
+    
+    private static GameObject uiCanvas;
+    public static GameObject UICanvas
+    {
+        get
+        {
+            return uiCanvas;
+        }
+        private set{}
+    }
 
     public static void Init()
     {
@@ -32,14 +42,14 @@ public static class UIManager
     {
         var handle = ResourcesManager.Instance.LoadAssetAsync<GameObject>($"UICanvas");
         yield return handle;
-        GameObject canvas = handle.InstantiateSync();
+        uiCanvas = handle.InstantiateSync();
         handle.Release();
-        GameObject.DontDestroyOnLoad(canvas);
-        var desktop = canvas.transform.Find("Desktop").gameObject;
+        GameObject.DontDestroyOnLoad(uiCanvas);
+        var desktop = uiCanvas.transform.Find("Desktop").gameObject;
         // var uicanvas = canvas.GetComponent<CanvasScaler>();
         // Debug.LogWarning($"screen.width = {Screen.width},screen.height = {Screen.height} , ratio = {(Screen.height/Screen.width).ToString("F2")}");
         UniWindow.Initalize(desktop);
-        s_EventSystem = canvas.GetComponentInChildren<EventSystem>();
+        s_EventSystem = uiCanvas.GetComponentInChildren<EventSystem>();
     }
 
     public static void OnDestroy()
@@ -78,7 +88,7 @@ public static class UIManager
     /// </summary>
     /// <param name="location">资源定位地址</param>
     /// <param name="userDatas">用户自定义数据</param>
-    public static void OpenWindowAsync<T>(Action<UIWindow> onCreateCallback,params System.Object[] userDatas) where T : UIWindow
+    public static void OpenWindowAsync<T>(Action<T> onCreateCallback,params System.Object[] userDatas) where T : UIWindow
     {
         UniWindow.OpenWindowAsync<T>(typeof(T).FullName,onCreateCallback, userDatas);
     }

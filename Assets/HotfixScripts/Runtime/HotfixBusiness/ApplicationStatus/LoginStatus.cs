@@ -25,18 +25,18 @@ public class LoginStatus : IApplicationStatus
 
             // 预先创建广告实例
             UniLogger.Log("初始化成功！");
-            ad = WX.CreateRewardedVideoAd(new WXCreateRewardedVideoAdParam()
-            {
-                adUnitId = "xxxxxxxx" //自己申请广告单元ID
-            });
-            ad.OnError((r) =>
-            {
-                UniLogger.Log("ad error:" + r.errMsg);
-            });
-            ad.OnClose((r) =>
-            {
-                UniLogger.Log("ad close:" + r.isEnded);
-            });
+            // ad = WX.CreateRewardedVideoAd(new WXCreateRewardedVideoAdParam()
+            // {
+            //     adUnitId = "xxxxxxxx" //自己申请广告单元ID
+            // });
+            // ad.OnError((r) =>
+            // {
+            //     UniLogger.Log("ad error:" + r.errMsg);
+            // });
+            // ad.OnClose((r) =>
+            // {
+            //     UniLogger.Log("ad close:" + r.isEnded);
+            // });
 
             // 创建用户信息获取按钮，在屏幕1/3区域创建一个透明区域
             // 首次获取会弹出用户授权窗口, 可通过右上角-设置-权限管理用户的授权记录
@@ -47,8 +47,6 @@ public class LoginStatus : IApplicationStatus
             infoButton.OnTap((userInfoButonRet) =>
             {
                 UniLogger.Log(JsonUtility.ToJson(userInfoButonRet.userInfo));//192.168.1.21:8082
-                //uiMain.SetContent($"nickName：{userInfoButonRet.userInfo.nickName}， avartar:{userInfoButonRet.userInfo.avatarUrl}");
-                UniSingleton.CreateSingleton<UserDataManager>();
                 UserDataManager.Instance.NickName = userInfoButonRet.userInfo.nickName;
                 UserDataManager.Instance.HeadHostUrl = userInfoButonRet.userInfo.avatarUrl;
 

@@ -63,6 +63,7 @@ public class ApplicationManager : MonoBehaviour
         // yield return ConfigLoader.Instance.LoadAllConfigs(OnLoadConfigCompleteCallback);
         UniLogger.Log("ConfigLoader.Instance.LoadAllConfigs");
         yield return UIManager.InitAsync();
+        UniSingleton.StopCoroutine(AppLaunch());
         UniLogger.Log("UI Init");
     }
 
